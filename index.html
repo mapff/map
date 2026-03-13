@@ -2,18 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Códigos dos mapas da oficina de criação free fire</title>
+<title>Códigos dos Mapas - Oficina de Criação m_moreno_35</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO básico -->
-<meta name="description" content="Explore mapas populares para jogos online, descubra os mais jogados, estratégias para squads e muito mais.">
-<meta name="keywords" content="mapas, jogos online, confrontos, multiplayer, Moreno">
-
-<!-- Open Graph para redes sociais -->
-<meta property="og:title" content="Mapas de Jogos Online - Moreno">
-<meta property="og:description" content="Explore mapas populares para jogos online, descubra os mais jogados, estratégias para squads e muito mais.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.seusite.com/">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -23,6 +13,7 @@
 --card:#141a2e;
 --accent:#7dd3fc;
 --soft:#94a3b8;
+--highlight:#1e3a8a; /* barra atrás dos ícones */
 }
 
 *{
@@ -38,7 +29,6 @@ color:#fff;
 transition: background 0.3s ease;
 }
 
-/* TOPO */
 header{
 position:sticky;
 top:0;
@@ -66,23 +56,16 @@ text-decoration:none;
 color:var(--soft);
 font-size:12px;
 padding:6px 10px;
-border-radius:8px; /* bordas arredondadas */
+border-radius:8px;
 text-transform:uppercase;
 cursor:pointer;
 transition: all 0.3s ease;
-outline:none; /* remove efeito de foco azul */
+outline:none;
 }
 
-.menu-box a.active{
-background:#000;
-color:#fff;
-}
+.menu-box a.active{ background:#000; color:#fff; }
+.menu-box a:hover{ background:#1f2937; }
 
-.menu-box a:hover{
-background:#1f2937;
-}
-
-/* CONTEÚDO */
 .container{
 padding:16px;
 opacity:1;
@@ -96,15 +79,9 @@ padding:14px;
 margin-bottom:14px;
 }
 
-.destaque{
-border:1px solid var(--accent);
-}
+.destaque{ border:1px solid var(--accent); }
 
-.selo-container{
-display:flex;
-align-items:center;
-margin-bottom:6px;
-}
+.selo-container{ display:flex; align-items:center; margin-bottom:6px; }
 
 .selo{
 font-size:11px;
@@ -123,11 +100,7 @@ border-radius:6px;
 margin-left:12px;
 }
 
-.sub{
-font-size:12px;
-color:var(--soft);
-margin-bottom:8px;
-}
+.sub{ font-size:12px; color:var(--soft); margin-bottom:8px; }
 
 .stats{
 display:flex;
@@ -146,22 +119,10 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* Botão Informações: sem efeito visual */
-.btn-info{
-margin-top:6px;
-background:#1f2937;
-color:#fff;
-outline:none;
-box-shadow:none;
-transition:none;
-}
+.btn-info{ margin-top:6px; background:#1f2937; color:#fff; outline:none; box-shadow:none; transition:none; }
+.btn-copy{ background:#000; color:#fff; }
 
-.btn-copy{
-background:#000;
-color:#fff;
-}
-
-/* MODAL INFORMAÇÕES */
+/* MODAL */
 .modal{
 position:fixed;
 inset:0;
@@ -171,15 +132,8 @@ justify-content:center;
 align-items:center;
 z-index:2000;
 }
-
-.modal.show{
-display:flex;
-animation: modalShow 0.2s forwards;
-}
-
-.modal.hide{
-animation: modalHide 0.2s forwards;
-}
+.modal.show{ display:flex; animation: modalShow 0.2s forwards; }
+.modal.hide{ animation: modalHide 0.2s forwards; }
 
 .modal-content{
 background:#141a2e;
@@ -192,73 +146,62 @@ opacity:0;
 transition: transform 0.2s, opacity 0.2s;
 }
 
-.modal.show .modal-content{
-animation: contentShow 0.2s forwards;
-}
+.modal.show .modal-content{ animation: contentShow 0.2s forwards; }
+.modal.hide .modal-content{ animation: contentHide 0.2s forwards; }
 
-.modal.hide .modal-content{
-animation: contentHide 0.2s forwards;
-}
-
-@keyframes modalShow {
-from {opacity:0;}
-to {opacity:1;}
-}
-
-@keyframes modalHide {
-from {opacity:1;}
-to {opacity:0;}
-}
-
-@keyframes contentShow {
-from {opacity:0; transform:scale(0.95);}
-to {opacity:1; transform:scale(1);}
-}
-
-@keyframes contentHide {
-from {opacity:1; transform:scale(1);}
-to {opacity:0; transform:scale(0.95);}
-}
+@keyframes modalShow { from {opacity:0;} to {opacity:1;} }
+@keyframes modalHide { from {opacity:1;} to {opacity:0;} }
+@keyframes contentShow { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
+@keyframes contentHide { from {opacity:1; transform:scale(1);} to {opacity:0; transform:scale(0.95);} }
 
 /* PÁGINAS */
-#redes,#divulgacoes{
-display:none;
-padding:20px;
-text-align:center;
-color:var(--soft);
-opacity:0;
-transition: opacity 0.5s ease;
-}
+#redes,#divulgacoes{ display:none; padding:20px; text-align:center; color:var(--soft); opacity:0; transition: opacity 0.5s ease; }
 
 /* REDES SOCIAIS */
 .redes-container{
+position:relative;
 display:flex;
-flex-direction:row; /* horizontal */
+flex-direction:row;
 align-items:center;
 justify-content:center;
 gap:20px;
 margin-top:40px;
 }
 
+/* barra maior atrás dos ícones */
+.redes-container::before{
+content:"";
+position:absolute;
+height:40px; /* maior para cobrir os ícones */
+background:var(--highlight);
+border-radius:12px;
+top:50%;
+left:0;
+right:0;
+margin:auto;
+width:90px; /* ajusta conforme os dois ícones juntos */
+transform:translateY(-50%);
+z-index:0;
+}
+
 .redes-container a{
-font-size:24px;
-color:#000;
-transition: transform 0.3s ease, color 0.3s ease;
+position:relative;
+font-size:28px; /* tamanho proporcional maior */
+transition: transform 0.3s ease;
+z-index:1;
 }
 
-.redes-container a:hover{
-transform: scale(1.2);
-color:#555;
-}
+.redes-container a:hover{ transform: scale(1.2); }
 
-audio{
-display:none;
-}
+/* cores oficiais */
+.redes-container a i.fa-instagram{ color:#E1306C; }
+.redes-container a i.fa-tiktok{ color:#010101; }
+
+audio{ display:none; }
 </style>
 </head>
 
 <body>
-
 <header>
 <div class="menu-box">
 <a id="tabMapas" class="active" onclick="mostrar('mapas')">MAPAS</a>
@@ -268,7 +211,6 @@ display:none;
 </header>
 
 <div class="container" id="mapas">
-
 <div class="mapa destaque">
 <div class="selo-container">
 <span class="selo">🔥 MAIS JOGADO</span>
@@ -280,9 +222,7 @@ display:none;
 <span> +600.000 inscrições</span>
 <span>+800.000 curtidas</span>
 </div>
-<div class="stats">
-<span> +150.000 jogadores diariamente</span>
-</div>
+<div class="stats"><span> +150.000 jogadores diariamente</span></div>
 <button class="btn btn-copy" onclick="copiarCodigo(this,'#D00A74')">Copiar código</button>
 <button class="btn btn-info" onclick="abrirInfo()">Informações</button>
 </div>
@@ -298,9 +238,7 @@ display:none;
 <span> +100.000 inscrições</span>
 <span> +150.000 curtidas</span>
 </div>
-<div class="stats">
-<span> +20.000 jogadores diariamente</span>
-</div>
+<div class="stats"><span> +20.000 jogadores diariamente</span></div>
 <button class="btn btn-copy" onclick="copiarCodigo(this,'#B00A84')">Copiar código</button>
 <button class="btn btn-info" onclick="abrirInfo()">Informações</button>
 </div>
@@ -316,13 +254,10 @@ display:none;
 <span> +150.000 inscrições</span>
 <span>️ +200.000 curtidas</span>
 </div>
-<div class="stats">
-<span> +50.000 jogadores diariamente</span>
-</div>
+<div class="stats"><span> +50.000 jogadores diariamente</span></div>
 <button class="btn btn-copy" onclick="copiarCodigo(this,'#2A00J4')">Copiar código</button>
 <button class="btn btn-info" onclick="abrirInfo()">Informações</button>
 </div>
-
 </div>
 
 <div id="redes">
@@ -341,16 +276,16 @@ display:none;
 <div class="modal-content">
 <h3>INFORMAÇÕES DO MAPA</h3>
 <ul>
-<li> Mapa aberto com muro ao redor</li>
-<li> Proteção contra bugadores no muro</li>
-<li> Mapa competitivo</li>
-<li> Ideal para treino</li>
-<li> Limite de gel no chão: 2</li>
-<li> Munição infinita</li>
-<li> Kit médico infinito</li>
-<li> Inalador infinito</li>
-<li> Mapa quase sem bugs</li>
-<li> Criado por m_moreno_35</li>
+<li>Mapa aberto com muro ao redor</li>
+<li>Proteção contra bugadores no muro</li>
+<li>Mapa competitivo</li>
+<li>Ideal para treino</li>
+<li>Limite de gel no chão: 2</li>
+<li>Munição infinita</li>
+<li>Kit médico infinito</li>
+<li>Inalador infinito</li>
+<li>Mapa quase sem bugs</li>
+<li>Criado por m_moreno_35</li>
 </ul>
 </div>
 </div>
@@ -370,50 +305,39 @@ document.getElementById("som").play()
 setTimeout(()=>{botao.innerText="Copiar código"},2000)
 }
 
-// Modal informações com animação
 function abrirInfo(){
 modal.style.display = "flex";
 modal.classList.remove("hide");
 modal.classList.add("show");
 }
 
-// Fechar modal clicando fora
 modal.onclick = function(e){
 if(e.target.id === "modal"){
 modal.classList.remove("show");
 modal.classList.add("hide");
-setTimeout(() => {
-modal.style.display = "none";
-}, 200);
+setTimeout(() => { modal.style.display = "none"; }, 200);
 }
 }
 
-// Mostrar abas com fade e fechar modal
 function mostrar(secao){
 if(secao===abaAtual) return;
 let atual = document.getElementById(abaAtual);
 let nova = document.getElementById(secao);
-
-// Fecha modal se estiver aberto
 if(modal.classList.contains("show")){
 modal.classList.remove("show");
 modal.classList.add("hide");
 setTimeout(()=>{modal.style.display="none"},200);
 }
-
 atual.style.opacity = 0;
 setTimeout(()=>{
 atual.style.display="none";
 nova.style.display="block";
 setTimeout(()=>{nova.style.opacity=1},50);
 },200);
-
 abaAtual=secao;
-
 tabMapas.classList.remove("active");
 tabRedes.classList.remove("active");
 tabDivulgacoes.classList.remove("active");
-
 if(secao==="mapas") tabMapas.classList.add("active");
 if(secao==="redes") tabRedes.classList.add("active");
 if(secao==="divulgacoes") tabDivulgacoes.classList.add("active");
